@@ -1,0 +1,11 @@
+http://test.com:9393/test1
+http://test.com:9393/test1?test=1
+http://test.com:9393/test1?test=1
+http://test2.com:9393/
+http://test2.com:9393/
+http://test2.com:9393/
+http://test2.com:9393/
+http://test.com:9393/test2
+http://test.com:9393/test3
+# POST the contents of a file...
+http://test2.com:9393/ POST test=2
