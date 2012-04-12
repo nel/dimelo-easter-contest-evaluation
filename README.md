@@ -28,9 +28,9 @@ OSX default:
 
 ## Host file
 
-    127.0.0.1 localhost¬
-    127.0.0.1 test.com¬
-    127.0.0.1 test1.com¬
+    127.0.0.1 localhost
+    127.0.0.1 test.com
+    127.0.0.1 test2.com
 
 ## Execution
 
