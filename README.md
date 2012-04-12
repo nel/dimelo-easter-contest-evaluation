@@ -43,9 +43,9 @@ When not present Procfile has been added to start/stop service.
 
 The maximum mark is 20/20, each environment test only 1 or 2 features.
 
-## Rules enforcement
+# Evaluation protocol
 
-### Env 1 - Traffic tests (*3 points*)
+## Env 1 - Traffic tests (*3 points*)
 
     siege -f urls.txt -r 30 -c 1 -b
 
@@ -64,13 +64,13 @@ The maximum mark is 20/20, each environment test only 1 or 2 features.
                             }
 - "uniq_visitor": 1
 
-# Env 2 - Track time window (*3 points*)
+## Env 2 - Track time window (*3 points*)
 
 Restart redis
 
     redis-cli FLUSHALL;redis-cli CONFIG RESETSTAT;redis-cli info|grep used_memory;httperf --port=9292 --hog --server=test.com --uri=/test --wsess=600,2,1 --rate 1 --timeout 5;bundle exec ruby script/rack-top;[[ -s "script/clean" ]] && bundle exec script/clean;redis-cli info | grep used_memory;redis-cli FLUSHALL;
 
-# Env 3 - Storage ID (*3 points*)
+## Env 3 - Storage ID (*3 points*)
 
 Customized config.ru
 
@@ -91,7 +91,7 @@ Default livetraffic_id is suppose to only store 15 request (not 30).
 
 Nobody got 3 points on this question.
 
-# Env 4 - Slow request (*3 points*)
+## Env 4 - Slow request (*3 points*)
 
 Customized config.ru
 
@@ -104,7 +104,7 @@ Customized config.ru
 Due to imprecise rules at the beginning, path instead of url are accepted (rules got fixed
 later).
 
-# Env 5 - Uniq visitor (*3 points*)
+## Env 5 - Uniq visitor (*3 points*)
 
 Customized config.ru to get rid of favico.ico
 
@@ -132,7 +132,7 @@ Previously expected 1 in case of robots
 
 Nobody got 3 points on this question.
 
-# Env 6 - Rate & Multi process (*3 points*)
+## Env 6 - Rate & Multi process (*3 points*)
 
     siege -f urls.txt -r 10000 -c 2 -b
     siege -f urls2.txt -r 10000 -c 2 -b
@@ -142,7 +142,7 @@ Nobody got 3 points on this question.
 
 Tolerance for average only good after 5 minutes.
 
-# Code & solution notation (*2 points*)
+## Code & solution notation (*2 points*)
 
 4 Dimelo developers have rated anonymized solutions by order of preference. 
 
